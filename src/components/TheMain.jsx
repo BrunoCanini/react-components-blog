@@ -1,10 +1,10 @@
 import {posts} from "../data/store"
 import TheCard from "./TheCard"
 
-const publishedPosts = posts.filter((post) => post.published === true);
-
-
 export default function TheMain(){
+
+    const publishedPosts = posts.filter((post) => post.published === true);
+
 
     return(
         publishedPosts.map((post)=>(

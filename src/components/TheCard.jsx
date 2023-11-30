@@ -1,5 +1,17 @@
 export default function TheCard(props){
 
+    const tagColor = (tag) => {
+        if(tag === "html"){
+            return "text-red-500"
+        }else if(tag === "css"){
+            return "text-blue-500"
+        }else if(tag === "js"){
+            return "text-yellow-500"
+        }else if(tag==="php"){
+            return "text-green-500"
+        }
+    }
+
     return (
 
         <div className=" w-[600px]  mx-auto rounded-xl mt-5 bg-white shadow-lg">
@@ -12,7 +24,7 @@ export default function TheCard(props){
                 <h4 className="text-l font-bold">Tags:</h4>
                 <ul>
                     {props.tags.map((tag,i)=>{
-                        return <li key={i} className="" >{tag}</li>
+                        return <li key={i} className={`${tagColor(tag)}`} >{tag}</li>
                     })}
                 </ul>
                 <button className="uppercase p-3 bg-yellow-500 w-fit text-white">Leggi di più</button>
